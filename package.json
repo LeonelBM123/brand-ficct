@@ -1,18 +1,11 @@
 {
-  "name": "@edx/brand-edx.org",
+  "name": "@edx/brand",
   "version": "1.0.0",
-  "description": "A package containing brand elements and SASS themes for edx.org",
+  "description": "Brand FICCT - UAGRM para Open edX",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edx/brand-edx.org.git"
+    "url": "git+https://github.com/LeonelBM123/brand-ficct.git"
   },
-  "author": "edX",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/edx/brand-edx.org/issues"
-  },
-  "homepage": "https://github.com/edx/brand-edx.org#readme",
-  "publishConfig": {
-    "access": "public"
-  }
+  "author": "FICCT-UAGRM",
+  "license": "AGPL-3.0"
 }
