@@ -26,6 +26,11 @@
 // =============================================================================
 
 :root {
+
+  // brand-ficct/paragon/_overrides.scss
+  --catalog-home-page-banner-background-image: url('/static/ficct/images/banner.jpg');
+  --catalog-home-page-banner-background-color: #1a3a6b;
+
   // ── Azul primario FICCT ──────────────────────────────────────────────────
   --pgn-color-primary-base: #1a3a6b;
   --pgn-color-primary-100:  #e8edf5;   // fondo hover muy sutil
