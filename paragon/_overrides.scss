@@ -28,39 +28,39 @@
 :root {
 
   // brand-ficct/paragon/_overrides.scss
-  --catalog-home-page-banner-background-image: url('/static/ficct/images/banner.jpg');
+  --catalog-home-page-banner-background-image: none;
   --catalog-home-page-banner-background-color: #1a3a6b;
 
   // ── Azul primario FICCT ──────────────────────────────────────────────────
   --pgn-color-primary-base: #1a3a6b;
-  --pgn-color-primary-100:  #e8edf5;   // fondo hover muy sutil
-  --pgn-color-primary-200:  #c5d1e8;   // bordes suaves
-  --pgn-color-primary-300:  #2a4d8f;   // variante clara
-  --pgn-color-primary-400:  #1a3a6b;   // igual al base
-  --pgn-color-primary-500:  #142d54;   // hover de botones
-  --pgn-color-primary-700:  #0d1e38;   // footer, textos sobre blanco
+  --pgn-color-primary-100: #e8edf5; // fondo hover muy sutil
+  --pgn-color-primary-200: #c5d1e8; // bordes suaves
+  --pgn-color-primary-300: #2a4d8f; // variante clara
+  --pgn-color-primary-400: #1a3a6b; // igual al base
+  --pgn-color-primary-500: #142d54; // hover de botones
+  --pgn-color-primary-700: #0d1e38; // footer, textos sobre blanco
 
   // ── Rojo brand FICCT ─────────────────────────────────────────────────────
-  --pgn-color-brand-base:   #cc0000;
-  --pgn-color-brand-300:    #e53333;   // variante clara
-  --pgn-color-brand-500:    #cc0000;   // igual al base
-  --pgn-color-brand-700:    #990000;   // hover de botones brand
+  --pgn-color-brand-base: #cc0000;
+  --pgn-color-brand-300: #e53333; // variante clara
+  --pgn-color-brand-500: #cc0000; // igual al base
+  --pgn-color-brand-700: #990000; // hover de botones brand
 
   // ── Dorado accent FICCT ──────────────────────────────────────────────────
-  --pgn-color-accent-a:     #f5c518;
-  --pgn-color-accent-b:     #f5c518;
-  --pgn-color-accent-100:   #fef9e7;   // fondo muy sutil dorado
-  --pgn-color-accent-700:   #c9a100;   // hover dorado
+  --pgn-color-accent-a: #f5c518;
+  --pgn-color-accent-b: #f5c518;
+  --pgn-color-accent-100: #fef9e7; // fondo muy sutil dorado
+  --pgn-color-accent-700: #c9a100; // hover dorado
 
   // ── Info (azul secundario) ────────────────────────────────────────────────
-  --pgn-color-info-300:     #2a7ab5;
-  --pgn-color-info-500:     #1a5a8a;
+  --pgn-color-info-300: #2a7ab5;
+  --pgn-color-info-500: #1a5a8a;
 
   // ── Focus ring: desactivado para look más limpio ──────────────────────────
   // Puedes reactivarlo quitando estas 3 líneas si necesitas accesibilidad estricta
-  --pgn-color-focus:                              transparent !important;
-  --pgn-shadow-focus-ring:                        none !important;
-  --pgn-color-nav-tabs-base-link-focus-border:    transparent !important;
+  --pgn-color-focus: transparent !important;
+  --pgn-shadow-focus-ring: none !important;
+  --pgn-color-nav-tabs-base-link-focus-border: transparent !important;
 }
 
 
@@ -123,12 +123,15 @@
     border-color: rgba(255, 255, 255, 0.6) !important;
     background-color: rgba(255, 255, 255, 0.08) !important;
 
-    svg, .btn__icon, .pgn__icon {
+    svg,
+    .btn__icon,
+    .pgn__icon {
       color: #ffffff !important;
       fill: #ffffff !important;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: rgba(255, 255, 255, 0.18) !important;
       border-color: #ffffff !important;
     }
@@ -144,12 +147,15 @@
       border-top-color: #ffffff;
     }
 
-    &:hover, &:focus, &[aria-expanded="true"] {
+    &:hover,
+    &:focus,
+    &[aria-expanded="true"] {
       background-color: rgba(255, 255, 255, 0.18) !important;
       border-color: #ffffff !important;
     }
 
-    svg, .pgn__icon {
+    svg,
+    .pgn__icon {
       color: #ffffff !important;
       fill: #ffffff !important;
     }
@@ -168,7 +174,8 @@
       opacity: 1;
       text-decoration: none;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: var(--pgn-color-primary-100);
         color: var(--pgn-color-primary-700) !important;
         text-decoration: none;
@@ -209,7 +216,8 @@
   border-color: var(--pgn-color-primary-base) !important;
   color: #ffffff !important;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: var(--pgn-color-primary-500) !important;
     border-color: var(--pgn-color-primary-500) !important;
   }
@@ -221,7 +229,8 @@
   border-color: var(--pgn-color-brand-base) !important;
   color: #ffffff !important;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: var(--pgn-color-brand-700) !important;
     border-color: var(--pgn-color-brand-700) !important;
   }
@@ -257,7 +266,9 @@ a {
     border-right: 0;
     border-radius: 0;
 
-    &:hover, &:focus, &.active {
+    &:hover,
+    &:focus,
+    &.active {
       font-weight: var(--pgn-typography-font-weight-normal);
       color: var(--pgn-color-primary-500);
       border-bottom-color: var(--pgn-color-brand-base); // rojo FICCT
