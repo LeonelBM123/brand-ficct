@@ -73,6 +73,7 @@
 #root header {
   flex: 0 0 auto;
   background-color: var(--pgn-color-primary-base) !important;
+  border-bottom: 3px solid var(--pgn-color-brand-base);
 
   // ── Logo ────────────────────────────────────────────────────────────────
   .logo {
@@ -99,12 +100,17 @@
   .nav-link {
     color: #ffffff !important;
     opacity: 0.9;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
 
     &:hover,
     &:focus {
       opacity: 1;
       color: #ffffff !important;
-      text-decoration: underline;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.12);
     }
   }
 
@@ -276,7 +282,7 @@ a {
 // =============================================================================
 // 8. INSTRUCTOR TOOLBAR
 //    Barra superior que ven los docentes dentro del courseware.
-//    Fondo claro con borde rojo en la parte superior para identificarla.
+//    Fondo claro con sombra sutil para diferenciarla del contenido.
 // =============================================================================
 
 [data-testid="instructor-toolbar"] {
@@ -284,7 +290,6 @@ a {
     background-color: #f8f9fa !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    border-top: 3px solid var(--pgn-color-brand-base); // borde rojo FICCT
 
     // Texto oscuro sobre fondo claro
     &.text-white,
@@ -582,4 +587,71 @@ a {
 .ficct-notifications-footer {
   padding: 0.6rem 0.9rem;
   color: var(--pgn-color-gray-600) !important;
+}
+
+
+// =============================================================================
+// 10. TIPOGRAFÍA GLOBAL
+//    Refuerza Inter como fuente base vía custom properties (--pgn-*), para
+//    cubrir componentes que leen las variables directamente además de los
+//    que usan las variables SCSS de _variables.scss.
+// =============================================================================
+
+:root {
+  --pgn-typography-font-family-sans-serif: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --pgn-typography-font-family-base: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+
+// =============================================================================
+// 11. CARDS DE CURSOS (Paragon .pgn__card)
+//    Look limpio: esquinas redondeadas, sombra sutil, sin bordes duros.
+//    overflow:hidden asegura que la imagen de portada respete el radio
+//    sin pelear con el override puntual de cada MFE en su CourseCard.scss.
+// =============================================================================
+
+.pgn__card {
+  border-radius: 8px !important;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+
+// =============================================================================
+// 12. BOTONES — FORMA
+//    Los colores ya están definidos en la Sección 4. Aquí solo se ajusta
+//    forma (radio) y peso de fuente para un look más moderno.
+// =============================================================================
+
+.btn-primary,
+.btn-brand,
+.btn-outline-primary,
+.btn-tertiary {
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+
+
+// =============================================================================
+// 13. ESPACIADO GENERAL
+//    Más aire en las secciones principales y mejor line-height en texto largo.
+// =============================================================================
+
+main {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+p {
+  line-height: 1.6;
 }
