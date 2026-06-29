@@ -73,7 +73,6 @@
 #root header {
   flex: 0 0 auto;
   background-color: var(--pgn-color-primary-base) !important;
-  border-bottom: 3px solid var(--pgn-color-brand-base);
 
   // ── Logo ────────────────────────────────────────────────────────────────
   .logo {
@@ -122,6 +121,7 @@
     color: #ffffff !important;
     border-color: rgba(255, 255, 255, 0.6) !important;
     background-color: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 50px !important;
 
     svg,
     .btn__icon,
@@ -142,6 +142,7 @@
     color: #ffffff !important;
     border-color: rgba(255, 255, 255, 0.6) !important;
     background-color: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 50px !important;
 
     &::after {
       border-top-color: #ffffff;
@@ -648,7 +649,7 @@ body {
 .btn-brand,
 .btn-outline-primary,
 .btn-tertiary {
-  border-radius: 6px !important;
+  border-radius: 50px !important;
   font-weight: 600 !important;
 }
 
