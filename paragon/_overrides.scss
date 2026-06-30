@@ -73,6 +73,7 @@
 #root header {
   flex: 0 0 auto;
   background-color: var(--pgn-color-primary-base) !important;
+  border-bottom: none !important;
 
   // ── Logo ────────────────────────────────────────────────────────────────
   .logo {
@@ -165,7 +166,7 @@
   // ── Dropdown menu (panel desplegable) ────────────────────────────────────
   //    Fondo blanco, borde superior rojo FICCT
   .dropdown-menu {
-    border-top: 3px solid var(--pgn-color-brand-base);
+    border-top: 3px solid var(--pgn-color-primary-base);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 
     a,
