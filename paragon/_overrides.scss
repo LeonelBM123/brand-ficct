@@ -152,9 +152,8 @@
   }
 
   // ── Dropdown menu (panel desplegable) ────────────────────────────────────
-  //    Fondo blanco, borde superior rojo FICCT
+  //    Fondo blanco, sin borde superior
   .dropdown-menu {
-    border-top: 3px solid var(--pgn-color-brand-base);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 
     a,
