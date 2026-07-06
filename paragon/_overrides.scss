@@ -86,20 +86,20 @@
     }
   }
 
-  // ── Texto global blanco (excepto overlays como el dropdown) ──────────────
-  *:not([data-header-overlay="true"]):not([data-header-overlay="true"] *) {
+  // ── Texto global blanco (excepto overlays y nav-links, que llevan su propio estado hover) ──
+  *:not([data-header-overlay="true"]):not([data-header-overlay="true"] *):not(.nav-link):not(a) {
     color: rgba(255, 255, 255, 0.92) !important;
   }
 
-  // ── Links y nav-links ───────────────────────────────────────────────────
+  // ── Links y nav-links: atenuados por defecto, blanco 100% + subrayado en hover ──
   a,
   .nav-link {
-    color: #ffffff !important;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.75) !important;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
 
     &:hover,
     &:focus {
-      opacity: 1;
       color: #ffffff !important;
       text-decoration: underline;
     }
