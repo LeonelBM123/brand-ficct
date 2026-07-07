@@ -179,6 +179,30 @@
       }
     }
   }
+
+  // ── Studio header (authoring): menú central como texto plano ───────────────
+  //    Content / Settings / Tools son DropdownButton outline-primary. Los
+  //    dejamos como texto blanco sin recuadro, igual que los nav-link de
+  //    learner-dashboard. El menú de usuario y el ícono de búsqueda están
+  //    fuera de [data-testid="desktop-menu"], así que conservan su estilo.
+  [data-testid="desktop-menu"] {
+    .btn-outline-primary,
+    .dropdown-toggle {
+      background-color: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+
+      &:hover,
+      &:focus,
+      &[aria-expanded="true"] {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        text-decoration: none !important;
+      }
+    }
+  }
 }
 
 
