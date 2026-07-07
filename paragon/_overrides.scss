@@ -53,6 +53,14 @@
   --pgn-color-info-300: #2a7ab5;
   --pgn-color-info-500: #1a5a8a;
 
+  // ── Botones tipo píldora ───────────────────────────────────────────────────
+  //    $btn-border-radius (Bootstrap legacy) no afecta el render en Paragon 23:
+  //    el token real es --pgn-size-btn-border-radius-*, que por defecto apunta
+  //    a --pgn-size-border-radius-* (0.375rem, fijo en el CSS de Paragon).
+  --pgn-size-btn-border-radius-base: 999px !important;
+  --pgn-size-btn-border-radius-lg: 999px !important;
+  --pgn-size-btn-border-radius-sm: 999px !important;
+
   // ── Focus ring: desactivado para look más limpio ──────────────────────────
   // Puedes reactivarlo quitando estas 3 líneas si necesitas accesibilidad estricta
   --pgn-color-focus: transparent !important;
