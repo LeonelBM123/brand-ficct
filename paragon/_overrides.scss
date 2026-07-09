@@ -230,6 +230,34 @@
 
 
 // =============================================================================
+// 2c. STUDIO SUB-HEADER (authoring) — Course Outline, Course Unit, Course Team,
+//    Taxonomy, Grading Settings, Library Authoring, etc.
+//    `.sub-header` ya cae dentro de `#root header` (mismo azul, mismo pill),
+//    pero varias páginas no pasan `hideBorder` y arrastran una línea gris que
+//    ahora queda pegada al azul. Esta sección formaliza el estilo y corrige
+//    ese borde, sin depender de que el color blanco "caiga por accidente".
+// =============================================================================
+
+.sub-header-title {
+  color: #ffffff !important;
+}
+
+// Contenedor de SubHeader: quita la línea gris de las páginas sin hideBorder
+div:has(> .sub-header) {
+  border-bottom: 0 !important;
+}
+
+// Reindexar u otros botones deshabilitados dentro del sub-header: mantener
+// contraste legible sobre navy en vez del gris apagado default de Paragon.
+.sub-header .btn-outline-primary:disabled,
+.sub-header .btn-outline-primary.disabled {
+  color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: transparent !important;
+}
+
+
+// =============================================================================
 // 3. FOOTER
 //    Fondo azul oscuro FICCT, links dorados.
 // =============================================================================
