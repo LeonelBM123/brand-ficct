@@ -256,6 +256,99 @@ div:has(> .sub-header) {
   background-color: transparent !important;
 }
 
+// Padding, esquinas redondeadas y centrado vertical.
+//    SubHeader.scss (código propio de authoring) fija `.sub-header-actions`
+//    con `align-self: flex-end` a propósito — los botones quedan pegados al
+//    fondo del bar en vez de centrados, y se nota cuando el título es alto
+//    (ej. "Studio home"). Sin padding ni border-radius tampoco, queda un
+//    rectángulo pegado a los bordes de la página.
+.sub-header {
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  align-items: center;
+
+  .sub-header-actions {
+    align-self: center !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+// Status bar de Course Unit ("Live" / borrador / "Discussions Enabled"):
+//    vive fuera de la caja azul, hermana de .sub-header, sobre el fondo claro
+//    de la página. Alineamos su margen izquierdo con el padding nuevo del
+//    sub-header (si no, el badge "Live" queda más a la izquierda que el
+//    título de arriba), le damos más separación vertical y forzamos negro
+//    bold para máximo contraste. El badge queda excluido: su ícono/texto se
+//    quedan blancos (van sobre fondo verde, no sobre el fondo claro de la página).
+.unit-header-status-bar {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  color: #000000 !important;
+  font-weight: 600 !important;
+
+  .badge,
+  .badge svg,
+  .badge .pgn__icon {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
+
+  svg:not(.badge svg),
+  .pgn__icon:not(.badge .pgn__icon) {
+    color: #000000 !important;
+    fill: #000000 !important;
+  }
+}
+
+// Input de edición del título del sub-header (HeaderTitle.tsx): el wildcard
+// de #root header fuerza texto blanco, pero el input mantiene fondo blanco
+// por defecto de Paragon → texto invisible mientras se edita.
+// Nota de especificidad: el wildcard es `#root header *:not(...):not(...)`
+// (1,2,1 — el #root pesa como ID). `.sub-header .form-control` (0,2,0) pierde
+// contra eso aunque ambas usen !important. Por eso acá se agrega `#root` y el
+// tipo `header` (`.sub-header` ES el propio <header>, no un descendiente).
+#root header.sub-header .form-control {
+  color: var(--pgn-color-gray-900) !important;
+}
+
+// =============================================================================
+// 2d. STUDIO — Headers sin el componente SubHeader compartido: la barra de
+//    "Schedule & details" (<header> sin clase), SectionSubHeader
+//    (.section-sub-header) y el contentTitle de SubHeader (.sub-header-content,
+//    ej. "Overall grade range"). Ya salen navy por el wildcard `#root header`,
+//    pero sin el padding/radio que sí tiene `.sub-header`.
+// =============================================================================
+
+.schedule-and-details header:not(.section-sub-header) {
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+}
+
+.section-sub-header {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  border-bottom: 0 !important;
+  margin-bottom: 1rem !important;
+}
+
+// .sub-header-content: tercer <header> que SubHeader.tsx renderiza vía el
+// prop contentTitle — cubre "Overall grade range" (Grading Settings),
+// Advanced Settings, y la página de Broken Links (mismo className hardcodeado).
+.sub-header-content {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+}
+
+// Respaldo general: cualquier <header> navy que no sea ya un caso conocido
+// (evita tener que cazar cada header suelto uno por uno — ej. "Assignment
+// types" en Grading, Course Re-run, Accessibility, y cualquier otro futuro).
+// Excluye la navegación superior (.studio-header) y Schedule & details (ya
+// tiene su propia regla con padding más grande arriba).
+#root header:not(.sub-header):not(.section-sub-header):not(.sub-header-content):not(.studio-header *):not(.schedule-and-details *) {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+}
+
 
 // =============================================================================
 // 3. FOOTER
