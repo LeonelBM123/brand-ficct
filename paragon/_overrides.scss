@@ -344,7 +344,11 @@ div:has(> .sub-header) {
 // types" en Grading, Course Re-run, Accessibility, y cualquier otro futuro).
 // Excluye la navegación superior (.studio-header) y Schedule & details (ya
 // tiene su propia regla con padding más grande arriba).
-#root header:not(.sub-header):not(.section-sub-header):not(.sub-header-content):not(.studio-header *):not(.schedule-and-details *) {
+// IMPORTANTE: se acota a authoring con `#root:has(.studio-header)` — esa clase
+// solo existe en authoring (verificado en los bundles de prod). Sin este scope,
+// un `<header>` pelado matchea TAMBIÉN el header de navegación de learning,
+// learner-dashboard, catalog y authn, redondeándolos por error.
+#root:has(.studio-header) header:not(.sub-header):not(.section-sub-header):not(.sub-header-content):not(.studio-header *):not(.schedule-and-details *) {
   padding: 0.75rem 1.25rem;
   border-radius: 0.75rem;
 }
